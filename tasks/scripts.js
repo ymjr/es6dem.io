@@ -24,7 +24,7 @@ gulp.task('scripts',()=>{
             module:{
                 loaders:[{
                     test:/\.js$/,
-                    loader:'babel'
+                    loader:'babel-loader'
                 }]
             }
         }),null,(err,stats)=>{
@@ -32,7 +32,7 @@ gulp.task('scripts',()=>{
                 chunks:false
             }))
         })
-        .pipe(gulp.dest('servsr/public/js'))
+        .pipe(gulp.dest('server/public/js'))
         .pipe(rename({
             basename:'cp',
             extname:'.min.js'
